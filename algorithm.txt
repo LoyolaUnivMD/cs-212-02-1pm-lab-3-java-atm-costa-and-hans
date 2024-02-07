@@ -24,13 +24,14 @@ ATM class Algorithm (will have method algorithms in this)\
 2. Create a constructor that will set the data field to the amount of money that the user has
     Deposit Algorithm (double)
     1. Ask the user how much they would like to deposit
+        1a. while the amount inputted is either a negative or not a number, keep asking until the user inputs a valid input
     2. add that amount to totalMoney
     3. return totalMoney
 
     Withdrawal Algorithm (double)
     1. Ask the user how much they would like to withdrawal
-    2. if the amount of money to be withdrawn is less than the totalMoney, subtract the amount inputted from totalMoney
-        2a. Otherwise, keep asking the user until they input an amount that is less than totalMoney
+    2. while the amount of money to be withdrawn is more than the totalMoney or it is a negative or it is not a number, keep asking until the user inputs a valid input
+        2a. Otherwise, subtract that amount from totalMoney
     3. return totalMoney
 
     Check Balance Algorithm (void)
