@@ -1,1 +1,43 @@
+import scanner
+import decimal
 
+Main Algorithm
+1. When a user opens the ATM, ask for the name of the user
+2. create a new ATM object using the money that the user has and their name
+3. Greet the user using the name that they inputted
+4. Output a main menu with everything that they can do from there
+        3a. this is a sample of what the main menu may look like:
+        What would you like to do
+        (D)eposit
+        (W)ithdrawal
+        (C)heck Balance
+        (E)xit
+5. while user doesn't input E, keep looping
+    5a. If a user inputs D, call the Deposit method
+    5b. If a user inputs W, call the Withdrawal method
+    5c. If a user inputs C, call the CheckBalance method
+    5e. If a user doesn't make a valid input (D, W, C, E), ask the user for another input until they input a valid input
+6. Call the Leave method
+
+ATM class Algorithm (will have method algorithms in this)\
+1. Define the data field (double totalMoney, String name)
+2. Create a constructor that will set the data field to the amount of money that the user has
+    Deposit Algorithm (double)
+    1. Ask the user how much they would like to deposit
+    2. add that amount to totalMoney
+    3. return totalMoney
+
+    Withdrawal Algorithm (double)
+    1. Ask the user how much they would like to withdrawal
+    2. if the amount of money to be withdrawn is less than the totalMoney, subtract the amount inputted from totalMoney
+        2a. Otherwise, keep asking the user until they input an amount that is less than totalMoney
+    3. return totalMoney
+
+    Check Balance Algorithm (void)
+    1. print "You have " totalMoney " left in your account"
+
+    Leave Algorithm (void)
+    1. Ask the user if they want to have their receipt printed or emailed
+        1a. if the user selects receipt, remind them to take their receipt
+        1b. else, tell the user to check their email
+    2. Print a goodbye message
