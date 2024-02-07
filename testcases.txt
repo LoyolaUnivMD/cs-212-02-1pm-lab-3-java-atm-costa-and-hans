@@ -1,0 +1,10 @@
+option:         amount:         output:
+
+withdraw        100             n/a (new balance is $312.90)
+deposit         50              n/a (new balance is $162.90)
+check balance   n/a             "Your balance is $212.90"
+leave           n/a             "Would you like your receipt printed or emailed?"..."You deposited/withdrew $0 Thank you for using this ATM"
+asaf            n/a             "Enter a valid menu option"
+withdraw        -1              "Enter a valid amount to withdraw"
+withdraw        500             "You do not have sufficient funds"
+deposit         ahbsrz          "Enter a valid amount to deposit"
