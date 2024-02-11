@@ -3,7 +3,7 @@ import java.text.DecimalFormat;
 public class ATM
 {
     Scanner input = new Scanner(System.in);
-    DecimalFormat money = new DecimalFormat("$#,###.00");
+    DecimalFormat money = new DecimalFormat("$#,##0.00");
     private double totalMoney;
 
 
@@ -34,9 +34,13 @@ public class ATM
     {
         System.out.println("How much would you like to Withdrawal?");
         double withdrawAmount = input.nextDouble();
-        while(withdrawAmount < 0)
+        while(withdrawAmount < 0 || withdrawAmount > totalMoney)
         {
-            System.out.println("That is not a valid input\nPlease input a number 0 or greater");
+            if (withdrawAmount < 0) {
+                System.out.println("That is not a valid input\nPlease input a number 0 or greater");
+            } else {
+                System.out.println("You do not have sufficient funds to withdraw.\nEnter a valid amount: ");
+            }
             withdrawAmount = input.nextDouble();
         }
         totalMoney -= withdrawAmount;
@@ -59,10 +63,10 @@ public class ATM
         }
         if(choice.equals("P"))
         {
-            System.out.println("Change in account: " + (totalMoney - 212.90) + "\nThank you, Don't Forget your receipt!");
+            System.out.println("Change in account: " + money.format(totalMoney - 212.90) + "\nThank you, Don't Forget your receipt!");
         }
         else {
-            System.out.println("Change in account: " + (totalMoney - 212.90) + "\nThank you, Don't Forget to check your email!");
+            System.out.println("Change in account: " + money.format(totalMoney - 212.90) + "\nThank you, Don't Forget to check your email!");
         }
     }
 }

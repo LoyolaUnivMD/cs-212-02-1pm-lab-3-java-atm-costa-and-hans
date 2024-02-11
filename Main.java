@@ -24,12 +24,12 @@ public class Main {
 
         // Get the user's initial choice
         userInfo.menu();
-        String choice = input.next();
+        String choice = input.next().strip();
 
         // While the user doesn't choose to exit
-        while (!choice.equals("E")) {
+        while (!choice.equalsIgnoreCase("E")) {
 
-            switch (choice) {
+            switch (choice.toUpperCase()) {
                 // If the user chooses to deposit
                 case "D" -> userInfo.Deposit();
 
